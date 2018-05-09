@@ -1,0 +1,85 @@
+/*
+1. 992px - Для больших планшетов
+2. 768px - "маленькие девайсы"
+3. 600px - ???
+4. 320px - 4дюйма
+*/
+@media screen and (max-width: 992px) {
+	.register__content{
+		flex-direction: column;
+	}
+	.register__contacts{
+		flex-direction: row;
+		justify-content: space-around;
+		margin-bottom: 1rem;
+	}
+	.register__form{
+		width: 100%;
+	}
+}
+@media screen and (max-width: 768px) {
+	html{
+		font-size: 90%;
+	}
+	.nav__list{
+		width: 100%;
+		flex-direction: column;
+	}
+	.portfolio__gallery{
+		grid-template-columns: repeat(2, 1fr);
+		font-size: 80%;
+	}
+}
+@media screen and (max-width: 600px) {
+	html{
+		font-size: 80%;
+	}
+	.register__contacts{
+		flex-direction: column;
+		justify-content: center;
+		margin-bottom: 1rem;
+	}
+	.register__contacts__item{
+		grid-template-areas:
+		'im tt tt tt tt l1 l1 l1 l1 l2 l2 l2 l2'
+		;
+	}
+	.register__form {
+		grid-template-areas:
+			'l l l l l'
+			'e e e e e'
+			's s s s s'
+			'n n n n n '
+			'm m m m m'
+			'. c c c .'
+			'. . b . .'
+			;
+	}
+}
+@media screen and (max-width: 400px) {
+	.register__contacts__item{
+		grid-template-areas:
+		'im'
+		'tt'
+		'l1'
+		'l2'
+		;
+	}
+}
+@media screen and (max-width: 320px) {
+	.portfolio__gallery{
+		grid-template-columns: 1fr;
+		font-size: 70%;
+	}
+	.register__form {
+		grid-template-areas:
+			'l'
+			'e'
+			's'
+			'n'
+			'm'
+			'c'
+			'b'
+			;
+	}
+}

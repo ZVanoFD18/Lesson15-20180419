@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html lang="ru">
+    <head>
+        <meta charset="utf-8">
+        <title>Первый сайт</title>
+				<!--  Сначала грузим библиотеки, затем наши стили. Тогда можем переопределять стандартные стили
+				В данном случае нет надобности выносить скрипты в конец HTML т.к. библиотеки не выполняют код, а только объявляют функции.
+			   -->
+				<link href="https://fonts.googleapis.com/css?family=Montserrat:400,700|Roboto+Slab:400,700" rel="stylesheet">
+				<!-- jquery -->
+				<script src="lib/jquery-3.3.1/jquery-3.3.1.js"></script>
+				<!-- owlcarousel -->
+				<link rel="stylesheet" href="lib/OwlCarousel2-2.3.3/dist/assets/owl.carousel.min.css">
+				<link rel="stylesheet" href="lib/OwlCarousel2-2.3.3/dist/assets/owl.theme.default.min.css">
+				<script src="lib/OwlCarousel2-2.3.3/dist/owl.carousel.min.js"></script>
+				<!-- application
+				Важно загружать "responsive.css" после основных стилей  чтобы "responsive.css"
+				переопределял основной стиль, а не наоборот.
+				-->
+         <link rel="stylesheet" href="style.css">
+				<link rel="stylesheet" href="css/responsive.css">
+				<script src="js/app.js"></script>
+    </head>
+    <body class="page">
+			<!-- Welcome  -->
+			<div class="page__row page__row--header">
+				<div class="page__row--header--blackout"></div>
+				<div class="page__cell page__cell--header">
+					<header class="header fontcolor2 fonttype2">
+						<a class="logo fontcolor2 fonttype2 link-menu" href="#">Startup</a>
+						<nav class="nav">
+							<ul class="nav__list">
+								<li class="nav__item"><a class="nav__link link-menu" href="#">Home</a></li>
+								<li class="nav__item"><a class="nav__link link-menu" href="#">Services</a></li>
+								<li class="nav__item"><a class="nav__link link-menu" href="#">About</a></li>
+								<li class="nav__item"><a class="nav__link link-menu" href="#">Works</a></li>
+								<li class="nav__item"><a class="nav__link link-menu" href="#">Blog</a></li>
+								<li class="nav__item"><a class="nav__link link-menu" href="#">Clients</a></li>
+								<li class="nav__item"><a class="nav__link link-menu" href="#">Contact</a></li>
+							</ul>
+						</nav>
+						<h1 class="header__title1">Welcome to STARTUP</h1>
+						<h2 class="header__title2">Your Favourite Creative Agency Template</h2>
+						<div class="header__join">
+							<a class="header__join__link fontcolor2 fonttype2 link-menu" href="#">Get Started</a>
+						</div>
+					</header>
+				</div>
+			</div>
+			<!-- Services -->
+			<div class="page__row bgcolor2">
+				<div class="page__cell">
+					<div class="services structure1">
+						<h2 class="services__title structure1__title">Services</h2>
+						<p class="services__text structure1__text">We offer ipsum dolor sit amet, consetetur sadipscing elitr amet</p>
+						<div class="services__content structure1__content">
+							<!-- item1 -->
+							<div class="services__content_item">
+								<div class="icon-circle">
+									<a class="services__icon__link "href="#">
+										<img class="services__icon__img" src="images/services1.png" alt="">
+									</a>
+								</div>
+								<h3 class="services__item__title">Clean Typography</h3>
+								<p class="services__item__text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Minima maxime quam architecto quo inventore harum ex magni, dicta impedit. Lorem ipsum.</p>
+							</div>
+							<!-- item2 -->
+							<div class="services__content_item">
+								<div class="icon-circle">
+									<a class="services__icon__link "href="#">
+										<img class="services__icon__img" src="images/services2.png" alt="">
+									</a>
+								</div>
+								<h3 class="services__item__title">Clean Typography</h3>
+								<p class="services__item__text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Minima maxime quam architecto quo inventore harum ex magni, dicta impedit. Lorem ipsum.</p>
+							</div>
+							<!-- item3 -->
+							<div class="services__content_item">
+								<div class="services__icon icon-circle">
+									<a class="services__icon__link "href="#">
+										<img class="services__icon__img" src="images/services3.png" alt="">
+									</a>
+								</div>
+								<h3 class="services__item__title">Clean Typography</h3>
+								<p class="services__item__text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Minima maxime quam architecto quo inventore harum ex magni, dicta impedit. Lorem ipsum.</p>
+							</div>
+						</div>
+				</div>
+			</div>
+		</div>
+
+			<!-- About us -->
+			<div class="page__row bgcolor3">
+				<div class="page__cell">
+					<div class="aboutus structure1">
+						<h2 class="aboutus__title structure1__title">About us</h2>
+						<p class="aboutus__text structure1__text">Lorem ipsum dolor sit amet, consetetur sadipscing elitr amet</p>
+						<div class="aboutus__content structure1__content">
+							<div class="aboutus__description">
+								<p class="aboutus__description__item">Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sediam nonumy eirmod tempor invidunt ut labore et dolore aliquyam erat, sed diam voluptua. At vero eos et accusam et justo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor et dolore aliquyam erat. Lorem ipsum dolor sit amet. Lorem ipsum eat.</p>
+								<p class="aboutus__description__item">Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sediam nonumy eirtempor invidunt ut labore et dolore aliquyam erat, sed diam voluptua. At vero eos eaccusam et justo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor et dolore aliquyam erat. Loreipsum dolor sit amet. Lorem ipsum dolor et.</p>
+							</div>
+							<div class="aboutus__galery owl-carousel">
+									<div class="aboutus__galery__item">
+										<div class="aboutus__galery__img" style="background-image: url(images/aboutus1.jpg)"></div>
+										<h3 class="aboutus__galery__title1">Md. Khalil Uddin</h3>
+										<h4 class="aboutus__galery__title2">Head of Ideas</h4>
+									</div>
+									<div class="aboutus__galery__item">
+										<div class="aboutus__galery__img" style="background-image: url(images/aboutus2.jpg)"></div>
+										<h3 class="aboutus__galery__title1">Rubel Miah</h3>
+										<h4 class="aboutus__galery__title2">Lead WordPress Developer</h4>
+									</div>
+									<div class="aboutus__galery__item">
+										<div class="aboutus__galery__img" style="background-image: url(images/aboutus3.jpg)"></div>
+										<h3 class="aboutus__galery__title1">Shamim Mia</h3>
+										<h4 class="aboutus__galery__title2">Sr. Web Developer</h4>
+									</div>
+									<div class="aboutus__galery__item">
+										<div class="aboutus__galery__img" style="background-image: url(images/aboutus4.jpg)"></div>
+										<h3 class="aboutus__galery__title1">John Doe</h3>
+										<h4 class="aboutus__galery__title2">Front-end Developer</h4>
+									</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<!-- Latest Works -->
+			<div class="page__row bgcolor2">
+				<div class="page__cell">
+					<div class="portfolio structure1">
+						<h2 class="portfolio__title structure1__title">Latest Works</h2>
+						<div class="portfolio__text structure1__text">
+							<div class="portfolio__menu">
+								<div class="portfolio__menu__item">
+									<a class="portfolio__menu__link" href="#">All</a>
+								</div>
+								<div class="portfolio__menu__item">
+									<a class="portfolio__menu__link" href="#">Branding</a>
+								</div>
+								<div class="portfolio__menu__item">
+									<a class="portfolio__menu__link" href="#">Design</a>
+								</div>
+								<div class="portfolio__menu__item">
+									<a class="portfolio__menu__link" href="#">Development</a>
+								</div>
+								<div class="portfolio__menu__item">
+									<a class="portfolio__menu__link" href="#">Strategy</a>
+								</div>
+							</div>
+						</div>
+						<div class="portfolio__content structure1__content">
+							<div class="portfolio__gallery">
+								<div class="portfolio__gallery__item">
+									<img class="portfolio__item__img" src="images/portfolio1.jpg" alt="portfolio1">
+									<div class="portfolio__darkening">
+										<h3 class="portfolio__darkening__title1">Hair Dresser</h3>
+										<h4 class="portfolio__darkening__title2">Branding</h4>
+										<button  class="portfolio__darkening__button" type="button" name="button">View &gt;</button>
+									</div>
+								</div>
+								<div class="portfolio__gallery__item" >
+									<img class="portfolio__item__img" src="images/portfolio2.jpg" alt="portfolio2">
+									<div class="portfolio__darkening"></div>
+								</div>
+								<div class="portfolio__gallery__item" >
+									<img class="portfolio__item__img" src="images/portfolio3.jpg" alt="portfolio3">
+									<div class="portfolio__darkening"></div>
+								</div>
+								<div class="portfolio__gallery__item">
+									<img class="portfolio__item__img" src="images/portfolio4.jpg" alt="portfolio4">
+									<div class="portfolio__darkening"></div>
+								</div>
+								<div class="portfolio__gallery__item">
+									<img class="portfolio__item__img" src="images/portfolio5.jpg" alt="portfolio5">
+									<div class="portfolio__darkening"></div>
+								</div>
+								<div class="portfolio__gallery__item">
+									<img class="portfolio__item__img" src="images/portfolio6.jpg" alt="portfolio6">
+									<div class="portfolio__darkening"></div>
+								</div>
+								<div class="portfolio__gallery__item">
+									<img class="portfolio__item__img" src="images/portfolio7.jpg" alt="portfolio7">
+									<div class="portfolio__darkening"></div>
+								</div>
+								<div class="portfolio__gallery__item">
+									<img class="portfolio__item__img" src="images/portfolio8.jpg" alt="portfolio8">
+									<div class="portfolio__darkening"></div>
+								</div>
+								<div class="portfolio__gallery__item">
+									<img class="portfolio__item__img" src="images/portfolio9.jpg" alt="portfolio9">
+									<div class="portfolio__darkening"></div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<!-- Get in touch -->
+			<div class="page__row page__row--get-in-touch">
+				<div class="page__cell page__cell--get-in-touch">
+					<div class="get-in-touch__container">
+						<h2 class="get-in-touch__title1">Do you like OUR WORK so far?</h2>
+						<h2 class="get-in-touch__title2">Let's talk about YOUR PROJECT!</h2>
+						<a class="get-in-touch__link" href="#">Get in Touch</a>
+						</div>
+					</div>
+					<!-- <div class="get-in-touch__darkening"> -->
+				</div>
+
+				</div>
+			</div>
+			<!-- Recent blog posts -->
+			<div class="page__row bgcolor2">
+				<div class="page__cell">
+					<div class="blog structure1">
+						<h2 class="blog_title structure1__title">Recent blog posts</h2>
+						<p class="bloge__text structure1__text">Lorem ipsum dolor sit amet, consetetur sadipscing elitr amet</p>
+						<div class="blog__content structure1__content">
+							<div class="blog__item">
+								<!-- <div class="blog__img" style="background-image: url('images/blog1.jpg')"></div> -->
+								<img class="blog__img" src="images/blog1.jpg" alt="">
+								<div class="blog__descr__container">
+									<div class="blog__date">
+										<p class="blog__date__content">18<br>Oct</p>
+									</div>
+									<h2 class="blog__title"> <a class="blog-link" href="#">Startup ideas needs to be funded</a> </h2>
+									<h3 class="blog__publisher">By <a class="blog-link" href="#">Khalil</a> Uddin in <a class="blog-link" href="#">Development</a></h3>
+									<p class="blog__descr">Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod teduntlabore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et erebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit am Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidulabore et dolore aliquyam erat, sed diam</p>
+									<a class="blog__link blog-link" href="#">Read more</a>
+								</div>
+							</div>
+							<div class="blog__item">
+								<img class="blog__img" src="images/blog2.jpg" alt="">
+								<div class="blog__descr__container">
+									<div class="blog__date">
+										<p class="blog__date__content">18<br>Oct</p>
+									</div>
+									<h2 class="blog__title"> <a class="blog-link" href="#">User Interface Designing Elements</a> </h2>
+									<h3 class="blog__publisher">By <a class="blog-link" href="#">Khalil</a> Uddin in <a class="blog-link" href="#">Development</a></h3>
+									<p class="blog__descr">Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod teduntlabore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et erebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor idunt ut labore et dolore aliquyam</p>
+									<a class="blog__link blog-link" href="#">Read more</a>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<!-- Partners -->
+			<div class="page__row">
+				<div class="page__cell">
+					<div class="partners">
+						<div class="partners__list">
+							<a href="#"> <img src="images/partners1.png" alt=""> </a>
+							<a href="#"> <img src="images/partners2.png" alt=""> </a>
+							<a href="#"> <img src="images/partners3.png" alt=""> </a>
+							<a href="#"> <img src="images/partners4.png" alt=""> </a>
+							<a href="#"> <img src="images/partners5.png" alt=""> </a>
+						</div>
+						<div class="partners__slider owl-carousel">
+								<div class="partners__slider__item">
+									<p class="partners__slider__line1">Hvaing placeat facere possimus, omnis voluptas assumenda est, omnis dolor repellendus.</p>
+									<p class="partners__slider__line2">Temporibus autem quibusdam et aut officiis debitis aut rerum”</p>
+									<p class="partners__slider__line3">John Doe, Google Inc.</p>
+								</div>
+								<div class="partners__slider__item">
+									<p class="partners__slider__line1">Item2 line1</p>
+									<p class="partners__slider__line2">Item2 line2</p>
+									<p class="partners__slider__line3">Item2 line1</p>
+								</div>
+								<div class="partners__slider__item">
+									<p class="partners__slider__line1">Item3 line1</p>
+									<p class="partners__slider__line2">Item3 line2</p>
+									<p class="partners__slider__line3">Item3 line1</p>
+								</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<!-- register  -->
+			<div class="page__row bgcolor2">
+				<div class="page__cell">
+					<div class="register structure1">
+						<h2 class="register__title structure1__title">Get in touch</h2>
+						<p class="register__text structure1__text">Lorem ipsum dolor sit amet, consetetur sadipscing elitr amet</p>
+						<div class="register__content structure1__content">
+							<div class="register__contacts">
+								<div class="register__contacts__item">
+									<img class="register__contacts__img" src="images/map-marker.png" alt="">
+									<p class="register__contacts__title">Address</p>
+									<p class="register__contacts__line1">312, 7th Ave, New York</p>
+									<p class="register__contacts__line2">NY 101200, United States of America</p>
+								</div>
+								<div class="register__contacts__item">
+									<img src="images/mobile-phone.png" alt="">
+									<p class="register__contacts__title">Hotline (24x7)</p>
+									<p class="register__contacts__line1">+65 0052 300, +65 88251 210</p>
+									<p class="register__contacts__line2">+88 01723 511 340</p>
+								</div>
+								<div class="register__contacts__item">
+									<img src="images/fa-envelope-o.png" alt="">
+									<p class="register__contacts__title">E-mail</p>
+									<p class="register__contacts__line1">shapedtheme@gmail.com</p>
+									<p class="register__contacts__line2">khalilkode@gmail.com</p>
+								</div>
+							</div>
+							<form class="register__form" action="#" method="get">
+								<input type="text" name="login" value="" placeholder='YOUR LOGIN' required>
+								<input type="text" name="email" value="" placeholder='YOUR E-MAIL'>
+								<input type="text" name="subject" value="" placeholder='YOUR SUBJECT'>
+								<input type="text" name="cName" value="" placeholder='COMPANY NAME'>
+								<textarea type="textarea" name="message" value="" placeholder='WRITE YOUR MESSAGE'></textarea>
+								<button type="submit">Send message</button>
+								<p class="register__form__comment"><span class="form-required">*</span> We’ll contact you as as possible. We don’t reply on Monday.</p>
+							</form>
+						</div>
+					</div>
+				</div>
+			<!-- Footer -->
+<!-- Шаблоны для копипаста
+			---- Это строка данных ----
+			<div class="page__row">
+				<div class="page__cell">
+				</div>
+			</div>
+
+			---- Это фрагмент "structure1" -----
+			<div class="page__row bgcolor2">
+				<div class="page__cell">
+					<div class="sectionClassName structure1">
+						<h2 class="sectionClassName__title structure1__title">structure1__title</h2>
+						<p class="sectionClassName__text structure1__text">structure1__text</p>
+						<div class="sectionClassName__content structure1__content">
+							Данные...
+						</div>
+					</div>
+				</div>
+			</div>
+-->
+    </body>
+</html>
