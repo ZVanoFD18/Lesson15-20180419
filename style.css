@@ -138,16 +138,15 @@ body{
 * Welcome
 */
 .page__row--header{
+	position: relative;
 	background-image: url('images/header.jpg');
 	background-position: center;
 	background-repeat: no-repeat;
 	background-size: cover;
 	/* padding-top: 33%; */
 }
-.page__cell--header{
-	position: relative;
-}
-.page__row--header--blackout{
+.page__row--header:before{
+	content: '';
 	position: absolute;
 	top: 0;
 	bottom: 0;
@@ -155,6 +154,10 @@ body{
 	right: 0;
 	opacity: 0.45;
 	background-color: #000;
+	content: '';
+}
+.page__cell--header{
+	position: relative;
 }
 .logo{
 	text-decoration: none;
@@ -223,6 +226,7 @@ body{
 }
 .services__content_item{
 	text-align: center;
+	padding: 0 1rem;
 	/**font-size: 0.875rem;*//*14px << body*/
 	/*line-height: 1.5rem;*//*24px << body*/
 	/*font-weight: 400;*//*<< body*/
@@ -284,6 +288,52 @@ body{
 }
 .aboutus__galery__title2{
 	font-size: 0.8125rem; /*13px все остальное из body*/
+}
+.sn__wrap{
+	position: absolute;
+	top: 0;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	/* visibility: hidden; */
+	border: 1px solid blue;
+	opacity: 0;
+}
+.sn__wrap:hover{
+	visibility: visible;
+	opacity: 1;
+	background-color: (255, 0, 0, 0.5);
+	border: 1px solid yellow;
+}
+
+.sn__panel{
+	position: absolute;
+	top: 40%;
+	/* left: 50%; */
+	width: 100%;
+	border: 1px solid red;
+	display: block;
+	/* text-align: center; */
+}
+.sn__panel:hover{
+	opacity: 1;
+}
+.owl-carousel .owl-item img.sn__img{
+	display: inline-block;
+	width: 1.75rem;/*28px*/
+	/*height: 1.75rem;*//*28px*/
+	padding: 0.3rem;
+}
+.owl-carousel .owl-item img.sn__img:hover{
+	background-color: red;
+}
+.sn__img.sn__img--selector{
+	width: 1rem;
+	height: 1rem;
+	background-repeat: no-repeat;
+	background-position: center;
+	/* background-size: cover; */
+	/* display: inline-block; */
 }
 .aboutus__galery .owl-nav{
 	position: absolute;
@@ -404,37 +454,28 @@ body{
 	background-position: center;
 	background-repeat: no-repeat;
 	background-size: cover;
-	/* background-color: rgba(255, 0, 0, 0.6); */
-	/* z-index: 1; */
 }
-
-/* .get-in-touch__darkening */
-.page__row--get-in-touch::after
-{
+.page__row--get-in-touch::before{
 	content: '';
 	position: absolute;
 	top: 0;
 	bottom: 0;
 	left: 0;
 	right: 0;
- 	background-color: rgba(192, 48, 28, 0.6);/*#c0301c*/
-	z-index: 1;
+	background-color: rgba(192, 48, 28, 0.6);
 }
- /* .page__cell--get-in-touch{
- } */
-
+.page__cell--get-in-touch{
+	position: relative;
+}
 .get-in-touch__container{
-	/* position: absolute; */
-	top : 0;
 	text-align: center;
 	padding: 6.25rem 0; /*100px*/
 	font-size: 1.875rem;/*30px*/
 	color: #fff;
-	z-index: 3;
+	/* z-index: 3; */
 }
 
-.get-in-touch__title2
-{
+.get-in-touch__title2{
 	margin-top: 1.75rem; /*28px*/
 }
 
@@ -457,12 +498,6 @@ body{
 * img 320x460
 */
 .blog{
-	/* display: flex; */
-	/* flex-direction: column; */
-	/* justify-content: flex-start; */
-	/* font-size: 1rem; */
-	/* font-size: calc(1vw + 1vh + 1vmin); */
-
 }
 .blog__item {
 	/* border: 1px solid red; */
@@ -472,7 +507,7 @@ body{
 }
 .blog__img{
 	float: left;
-	width: calc(100% * 460/1140);
+	width: calc(100% * 460/1140);/*Пропорционально 460px от пространства шириной 1140px*/
 	margin-right: calc(100% * 30/1140); /*30px от базовой ширины 1140px*/
 }
 .blog__img::after{
@@ -592,21 +627,25 @@ body{
 	flex-direction: row;
 	justify-content: space-between;
 }
+/*------------------------------------------------------------------------------
+*  register/contacts
+*/
 .register__contacts{
-	/* display: grid; */
+	width: 18.75rem; /*300px*/
 	display: flex;
 	flex-direction: column;
 }
 .register__contacts__item{
 	display: grid;
 	grid-column-gap: 1rem;
-	grid-template-columns: minmax(32px, 1fr);
 	grid-template-rows: 1.7rem 1.3rem 1rem;/*Подбираем - по расчету нихрена не совпадает*/
+	grid-template-columns: 16px 1fr;
 	grid-template-areas:
-	'im tt tt tt tt tt tt tt tt'
-	'im l1 l1 l1 l1 l1 l1 l1 l1'
-	'im l2 l2 l2 l2 l2 l2 l2 l2'
+	'im tt'
+	'. l1'
+	'. l2'
 	;
+
 }
 .register__contacts__img{
 	grid-area: im;
@@ -624,6 +663,9 @@ body{
 	grid-area: l2;
 	font-size: 0.75rem; /*12px*/
 }
+/*------------------------------------------------------------------------------
+*  register/form
+*/
 .register__form {
 	width: 45.625rem; /*730px*/
 	display: grid;
@@ -658,6 +700,7 @@ body{
 	grid-area: b;
 	text-transform: uppercase;
 	border-radius: 5px;
+	width: 200px;
 }
 .register__form__comment{
 	grid-area: c;
@@ -671,3 +714,25 @@ body{
 /*------------------------------------------------------------------------------
 *  Footer
 */
+.page__row .page__row--footer{
+	/* background-color: rgba(255, 0, 0, 0.5); */
+	background-color: #c0301c;
+}
+.footer__text{
+	text-align: center;
+	text-transform: uppercase;
+	font-size: 0.75rem; /*12px*/
+}
+.footer__icons{
+	display: flex;
+	justify-content: center;
+	/* align-items: center; */
+	flex-wrap: wrap;
+}
+.footer__icons__item{
+	display: inline-block;
+	padding: 0.5rem;
+	border: 0.125rem solid #fff;
+	border-radius: 50%;
+	margin: 0 0.4375rem; /*14px/2*/
+}
