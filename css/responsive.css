@@ -1,4 +1,5 @@
 /*
+Основные размеры устройств:
 1. 992px - Для больших планшетов
 2. 768px - "маленькие девайсы"
 3. 600px - ???
@@ -22,9 +23,6 @@
 	}
 }
 @media screen and (max-width: 768px) {
-	/* html{
-		font-size: 90%;
-	} */
 	.nav__list{
 		width: 100%;
 		flex-direction: column;
@@ -47,7 +45,6 @@
 	}
 	.blog__date{
 		float: right;
-		/* margin-left: calc(100% - 4.5rem - 100% * 460/1140); */
 	}
 	.blog__title{
 		padding-top: 5rem;
@@ -81,17 +78,39 @@
 	}
 }
 @media screen and (max-width: 500px) {
-	/* .blog__img{
+	 .structure1{
+		padding-top: 3rem;
+		padding-bottom: 3rem;
+	}
+	.aboutus__galery{
+		margin-top: 1rem;
+	}
+	/* Используя родительский класс, перекрываем приоритет "nth-child(...)"*/
+	.blog__content .blog__item{
+		margin-top: 2rem;
+	}
+	.blog__img{
+		width: 100%;
+	}
+	.blog__descr__container{
 		display: block;
-		float: none;
-		clear: both;
-	}	 */
-	/* .blog__date{
-		float: right;
-		display: block;+
-	} */
+	}
+	.blog__date{
+		margin-top: 0.5rem;
+		margin-right: 0;
+	}
+	.blog__title{
+		display: inline-block;
+		padding-top: 0.5rem;
+	}
+	.partners{
+		padding-top: 2rem;
+		padding-bottom: 1rem;
+	}
+	.partners__slider{
+		margin-top: 1rem;
+	}
 	.register__contacts__item{
-		/* grid-template-rows: 2rem; */
 		grid-template-columns: 16px 1fr 1fr;
 		grid-template-areas:
 		'im tt tt'
@@ -100,27 +119,25 @@
 	}
 }
 @media screen and (max-width: 400px) {
-/*
-	.blog__img{
-		float: none;
-    width: 50%;
-		margin: 0 25%
+	html{
+		font-size: 70%;
 	}
-	*/
-	.blog__date{
-		/* display: block; */
-		/* float: none; */
-		margin-left: 20%;
+	.aboutus__description{
+		flex-direction: column;
 	}
-	/* .blog__date::after{
-		content: '';
-		display: table;
-		clear: both;
-	} */
-	/* .blog__date{
-		float: none;
-		clear: both;
-	} */
+	.aboutus__description__item:nth-of-type(n){
+			padding-right: 0;
+			padding-left: 0;
+	}
+	.aboutus__description__item:nth-of-type(n+1){
+		padding-top: 1rem;
+	}
+	.get-in-touch__title1{
+		font-size: 1.5rem;
+	}
+	.get-in-touch__title2{
+		font-size: 1.2rem;
+	}
 	.register__contacts__item{
 		grid-template-columns: 16px 1fr;
 		grid-template-areas:
@@ -142,20 +159,9 @@
 	}
 }
 @media screen and (max-width: 320px) {
-	.aboutus__description{
-		flex-direction: column;
-	}
-	.aboutus__description__item:nth-of-type(n)
-	{
-			padding-right: 0;
-			padding-left: 0;
-	}
-	.aboutus__description__item:nth-of-type(n+1){
-		padding-top: 1rem;
-	}
 	.portfolio__gallery{
 		grid-template-columns: 1fr;
-		font-size: 70%;
+		font-size: 120%; /* Чуть увеличим, чисто для демонстрации фозможностей резиновых размеров элементов от шрифта базового блока*/
 	}
 	.register__form {
 		grid-template-areas:

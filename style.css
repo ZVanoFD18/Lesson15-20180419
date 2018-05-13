@@ -134,6 +134,40 @@ body{
 	/* background-color: pink; */
 	padding: 1rem;
 }
+/** Социальные сети
+ * "sn_" - Social Networks
+ * Структцра общего назначения, хоть и используется только в галерее "ABOUT US".
+ */
+.sn__wrap{
+	position: absolute;
+	top: 0;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	transition: 0.5s;
+	opacity: 0;
+}
+.sn__wrap:hover{
+	opacity: 1;
+	background-color: rgba(85, 85, 85, 0.5);
+}
+
+.sn__panel{
+	position: absolute;
+	bottom: 10%;
+	width: 100%;
+}
+.sn__link{
+	display: inline-block;
+	height: 2rem;
+	width: 2rem;
+	padding: 0.5rem;
+	background-position:center;
+	background-repeat: no-repeat;
+}
+.sn__link:hover{
+	background-color: red;
+}
 /*------------------------------------------------------------------------------
 * Welcome
 */
@@ -160,15 +194,15 @@ body{
 	position: relative;
 }
 .logo{
+	position: absolute;
+	top: 2.5rem; /*40px*/
 	text-decoration: none;
-	display: inline-block;
-	margin-top: 2.5rem; /*40px*/
 	font-size: 1.5rem;/*24px*/
 	font-weight: 700;
 }
 .header__title1{
 	display: block;
-	margin-top: 16.25rem;/*260px*/
+	padding-top: 27rem;/*16.25rem<<260px + немного на высоту и отступ меню, которое absolute*/
 	text-align: center;
 	font-size:  2.125rem;/*34px*/
 	font-weight: 300;
@@ -195,13 +229,12 @@ body{
 	font-size: 1rem;
 	text-transform: uppercase;
 	text-decoration: none;
-	/* position: relative; */
 	top: 50%;
 	transform: translateY(-50%);
 }
 .nav{
 	position: absolute;
-	top: 1.7rem;
+	top: 2.5rem;
 	right: 1rem;
 }
 .nav__list{
@@ -227,9 +260,6 @@ body{
 .services__content_item{
 	text-align: center;
 	padding: 0 1rem;
-	/**font-size: 0.875rem;*//*14px << body*/
-	/*line-height: 1.5rem;*//*24px << body*/
-	/*font-weight: 400;*//*<< body*/
 }
 .services__icon__img{
 	max-width: 100%;
@@ -273,68 +303,23 @@ body{
 	text-align: center;
 }
 .aboutus__galery__img{
+	position: relative;
 	padding-top: 120%;/* используем вместо "height"*/
 	background-position: center;
 	background-repeat: no-repeat;
 	background-size: cover;
 }
+
+
 .aboutus__galery__title1{
 	margin: 1.25rem 0; /*20px*/
 	text-transform: uppercase;
 	font-family: "Montserrat", sans-serif; /*sans-serif - без засечек*/
-	/*font-size: 0.875rem;*/ /*14px <<body*/
-	/*line-height: 1.5rem;*/ /*24px <<body*/
-	/*font-weight: 400;*/ /*<<body*/
 }
 .aboutus__galery__title2{
 	font-size: 0.8125rem; /*13px все остальное из body*/
 }
-.sn__wrap{
-	position: absolute;
-	top: 0;
-	bottom: 0;
-	left: 0;
-	right: 0;
-	/* visibility: hidden; */
-	border: 1px solid blue;
-	opacity: 0;
-}
-.sn__wrap:hover{
-	visibility: visible;
-	opacity: 1;
-	background-color: (255, 0, 0, 0.5);
-	border: 1px solid yellow;
-}
 
-.sn__panel{
-	position: absolute;
-	top: 40%;
-	/* left: 50%; */
-	width: 100%;
-	border: 1px solid red;
-	display: block;
-	/* text-align: center; */
-}
-.sn__panel:hover{
-	opacity: 1;
-}
-.owl-carousel .owl-item img.sn__img{
-	display: inline-block;
-	width: 1.75rem;/*28px*/
-	/*height: 1.75rem;*//*28px*/
-	padding: 0.3rem;
-}
-.owl-carousel .owl-item img.sn__img:hover{
-	background-color: red;
-}
-.sn__img.sn__img--selector{
-	width: 1rem;
-	height: 1rem;
-	background-repeat: no-repeat;
-	background-position: center;
-	/* background-size: cover; */
-	/* display: inline-block; */
-}
 .aboutus__galery .owl-nav{
 	position: absolute;
 	display: block;
@@ -382,9 +367,13 @@ body{
 */
 .portfolio__menu{
 	display: flex;
-	justify-content: space-between;
+	justify-content: center;
+	flex-wrap: wrap;
 	padding: 0 10%;
 	font-size: 1rem;/*16px*/
+}
+.portfolio__menu__item{
+	padding: 0 1rem;
 }
 .portfolio__menu__link{
 	text-decoration: none;
@@ -396,9 +385,8 @@ body{
 .portfolio__gallery{
 	display: grid;
 	grid-template-columns: repeat(3, 1fr);
-	/*grid-gap: 1rem;*/
 	grid-gap: 1em;
-	font-size: 1rem;
+	font-size: 1rem; /*Базовый размер шрифта галереи. Остальные размеры относительно него.*/
 }
 .portfolio__gallery__item{
 	position: relative;
@@ -411,46 +399,50 @@ body{
 	left: 0;
 	right: 0;
 	opacity: 0;
-	background-color: red; /*PSD #c0301c, но не похоже*/
+	background-color: rgba(192, 48, 28, 0.7); /*c0301c*/
 	text-align: center;
+	color: #fff;
 }
 .portfolio__darkening:hover{
-	opacity: 0.7;/*PSD - непрозрачность 70%*/
+	opacity: 1;
 }
 .portfolio__darkening__title1{
-	/*margin-top: 34%;*/ /*100%*110px/320px*/
-	margin-top: 6.875em;/*От размера шрифта галереи*/
+	margin-top: 30%;
 	font-family: "Montserrat", sans-serif; /*sans-serif - без засечек*/
-	/*font-size: 1.125rem;*//*18px*/
-	font-size:
-	/*line-height: 1.5rem;*//*24px*/
+	font-size: 1.125rem;/*18px*/
 }
 .portfolio__darkening__title2{
-	/*margin-top: 6%;*//*100%*20px/320px*/
-	margin-top: 1.25em;
-	/*font-size: 0.75rem;*/ /*12px*/
-	font-size: 112.5%; /*От размера шрифта галереи*/
+	margin-top: 1.25em;/*От размера шрифта галереи  - резиновый*/
+	font-size: 112.5%; /*От размера шрифта галереи  - резиновый*/
 }
 .portfolio__darkening__button{
-	/*margin-top: 8%;*//*100%*28px/320px*/
-	margin-top: 1.75em;/*От размера шрифта галереи*/
+	margin-top: 1.75em;/*От размера шрифта галереи  - резиновый*/
 	font-family: "Roboto Slab", serif;/*serif - с засечками*/
-	/*font-size: 0.875rem;*/ /*14px*/
-	font-size: 87.5%;
+	font-size: 87.5%; /*От размера шрифта галереи  - резиновый*/
 	text-transform: uppercase;
+	text-decoration: none;
+	background-color: #fff;
 	border-radius: 5px;
+	display: inline-block;
+	padding:
+		calc(0.5*1em) /*Отступ сверху и снизу относительно размера шрифиа галлереи  - резиновый*/
+		calc(2*1em) /*Отступ слева и справа относительно размера шрифиа галлереи - резиновый*/
+		;
+	color: #c0301c;
+}
+.portfolio__darkening__to-right{
+	padding-left: 0.7em; /*От размера шрифта галереи  - резиновый*/
 }
 
 .portfolio__item__img{
-	display: block;
-	/*max-width: 100%;*/ /*В grid-layout не нужно.*/
+	display: block; /*Для устранения инлайновых отступов при перекрытии тенью.*/
 }
 /*------------------------------------------------------------------------------
 *  Get in touch
 */
 .page__row--get-in-touch{
 	position: relative;
-	 background-image: url('images/getintouch.jpg');
+	background-image: url('images/getintouch.jpg');
 	background-position: center;
 	background-repeat: no-repeat;
 	background-size: cover;
@@ -472,7 +464,6 @@ body{
 	padding: 6.25rem 0; /*100px*/
 	font-size: 1.875rem;/*30px*/
 	color: #fff;
-	/* z-index: 3; */
 }
 
 .get-in-touch__title2{
@@ -497,11 +488,6 @@ body{
 *  Recent blog posts
 * img 320x460
 */
-.blog{
-}
-.blog__item {
-	/* border: 1px solid red; */
-}
 .blog__item:nth-child(n + 2){
 	margin-top: 4.875rem;/*78px*/
 }
@@ -521,13 +507,8 @@ body{
 	height: 4.5rem;
 	text-align: center;
 	font-family: "Montserrat", sans-serif; /*sans-serif - без засечек*/
-	/* font-size: 	87.5%;  */
-	/*87.5%<<0.875rem<<14px*/
-	/* font-size: calc(50% + 30); */
-	/* font-size: calc(1vw + 1vh + 1vmin); */
 	font-weight: bold;
 	padding: 20% auto;
-	/* padding-top: 20%; */
 	border: 0.125rem solid #555; /*2px*/
 	margin-right: 1.75rem;
 }
@@ -542,8 +523,6 @@ body{
 	color: #c0301c;
 	text-transform: uppercase;
 	padding-top: 1rem;
-	/* margin-bottom: 1.25rem; */
-	/*20px*/ 
 }
 .blog__publisher{
 	font-size: 0.8125rem; /*13px*/
@@ -553,7 +532,6 @@ body{
 }
 .blog__descr{
 	margin-top: 1.625rem;
-	/*26px*/
 	font-size: 0.875rem; /*14px*/
 	line-height: 1.5rem; /*24px*/
 }
@@ -576,13 +554,15 @@ body{
 .partners{
 	padding-top: 6.25rem;/*100px padding ибо нам нужно растьнуть фон*/
 	padding-bottom: 6.25rem;/*100px*/
-	/* background-color: gray; */
 }
 .partners__list{
 	display: flex;
-	flex-wrap: nowrap;
-	justify-content: space-between;
-	margin: 0 10%;
+	flex-wrap:wrap;
+	justify-content: center;
+	margin: 0 5%;
+}
+.partners__item{
+	padding: 0.5rem 1rem;
 }
 .partners__slider {
 	position: relative;
@@ -669,7 +649,6 @@ body{
 .register__form {
 	width: 45.625rem; /*730px*/
 	display: grid;
-	/* grid-template-columns: repeat(4, 1fr); */
 	grid-template-rows: 	42px 42px 100px 42px;
 	grid-column-gap: 1.875rem;/*30px*/
 	grid-row-gap: 1.25rem; /*20px*/
@@ -715,18 +694,17 @@ body{
 *  Footer
 */
 .page__row .page__row--footer{
-	/* background-color: rgba(255, 0, 0, 0.5); */
 	background-color: #c0301c;
 }
 .footer__text{
 	text-align: center;
 	text-transform: uppercase;
 	font-size: 0.75rem; /*12px*/
+	color: #fff;
 }
 .footer__icons{
 	display: flex;
 	justify-content: center;
-	/* align-items: center; */
 	flex-wrap: wrap;
 }
 .footer__icons__item{
